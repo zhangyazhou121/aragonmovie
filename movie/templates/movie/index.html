@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "movie/css/movie.css" %}">
+</head>
+{% for movieinfo in movielist %}
+<body>
+        <div>
+                <h2>{{ movieinfo.movie_name }}</h2>
+                <img src="{{ movieinfo.movie_image }}"  alt="" />
+                <p>
+                        豆瓣评分: {{ movieinfo.movie_rating }}
+                </p>
+                <p>
+                        简介: {{ movieinfo.movie_summary }}
+                </p>
+                </br>
+                <p>
+                        Download: {{ movieinfo.movie_link }}
+                </p>
+        </div>
+</body>
+{% endfor %}
+</html> 
